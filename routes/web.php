@@ -12,6 +12,7 @@
 */
 
 Route::get('/', ['as' => 'login', 'uses' => 'Site\LoginController@index']);
+Route::get('/cadastrar', ['as' => 'site.login.cadastrar', 'uses' => 'Site\LoginController@cadastrar']);
 Route::get('/sair', ['as' => 'site.login.sair', 'uses' => 'Site\LoginController@sair']);
 Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginController@entrar']);
 
