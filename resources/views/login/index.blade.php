@@ -23,7 +23,7 @@
                         </div>
 
                         <button class="justify-content-center btn btn-success" type="submit">Entrar</button>
-                        <a class="justify-content-center btn btn-success" href=" {{ route('site.login.cadastrar') }}">Cadastro</a> 
+                        <a class="justify-content-center btn btn-success" href=" {{ route('site.login.cadastro') }}">Cadastro</a> 
                     </form>
                   </div>
               </div>
