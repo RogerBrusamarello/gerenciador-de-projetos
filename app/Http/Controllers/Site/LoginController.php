@@ -11,6 +11,14 @@ class LoginController extends Controller
         return view('login.index');
     }
 
+    public function cadastro(){
+        return view('login.cadastrar');
+    }
+
+    public function cadastrar(){
+        
+    }
+
     public function entrar(Request $req){
         $dados = $req->all();
 
