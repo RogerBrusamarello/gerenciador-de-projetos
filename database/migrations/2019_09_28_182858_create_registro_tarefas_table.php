@@ -14,8 +14,10 @@ class CreateRegistroTarefasTable extends Migration
     public function up()
     {
         Schema::create('registro_tarefas', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('codigo');
+            $table->timestamps('dataHoraRegistro');
+            $table->decimal('tarefa_codigo',5,2);
+            $table->decimal('user_codigo',5,2);
         });
     }
 
