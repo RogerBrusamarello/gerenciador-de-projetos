@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tarefa extends Model
 {
     protected $fillable = [
-        'codigo', 'nomeTarefa', 'descricao', 'statusTarefa_codigo', 'prioridade_codigo', 'etapa_codigo'
+        'id', 'nomeTarefa', 'descricao', 'statusTarefa_id', 'prioridade_id', 'etapa_id'
     ];
 }

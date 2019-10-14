@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class StatusTarefa extends Model
 {
     protected $fillable = [
-        'codigo','descricao'
+        'id','descricao'
     ];
 }

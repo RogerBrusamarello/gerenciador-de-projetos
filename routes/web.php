@@ -18,7 +18,7 @@ Route::get('/sair', ['as' => 'site.login.sair', 'uses' => 'Site\LoginController@
 Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginController@entrar']);
 
 
-Route::group(['middleware'=>'auth'],function(){
+//Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/projetos', ['as' => 'admin.projetos', 'uses' => 'Admin\ProjetoController@index']);
     Route::get('/admin/projetos/adicionar', ['as' => 'admin.projetos.adicionar', 'uses' => 'Admin\ProjetoController@adicionar']);
     Route::post('/admin/projetos/salvar', ['as' => 'admin.projetos.salvar', 'uses' => 'Admin\ProjetoController@salvar']);
@@ -32,4 +32,4 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/admin/tarefas/editar/{id}', ['as' => 'admin.tarefas.editar', 'uses' => 'Admin\TarefaController@editar']);
     Route::put('/admin/tarefas/atualizar/{id}', ['as' => 'admin.tarefas.atualizar', 'uses' => 'Admin\TarefaController@atualizar']);
     Route::get('/admin/tarefas/deletar/{id}', ['as' => 'admin.tarefas.deletar', 'uses' => 'Admin\TarefaController@deletar']);
-});
+//});

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class RegistroTarefa extends Model
 {
     protected $fillable = [
-        'codigo', 'dataHoraRegistro', 'tarefa_codigo', 'user_codigo'
+        'id', 'dataHoraRegistro', 'tarefa_id', 'user_id'
     ];
 }

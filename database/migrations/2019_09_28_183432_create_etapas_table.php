@@ -14,8 +14,10 @@ class CreateEtapasTable extends Migration
     public function up()
     {
         Schema::create('etapas', function (Blueprint $table) {
-            $table->bigIncrements('codigo');
+            $table->bigIncrements('id');
             $table->string('descricao');
+            $table->timestamps();
+
         });
     }
 
