@@ -32,4 +32,11 @@ Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginContro
     Route::get('/admin/tarefas/editar/{id}', ['as' => 'admin.tarefas.editar', 'uses' => 'Admin\TarefaController@editar']);
     Route::put('/admin/tarefas/atualizar/{id}', ['as' => 'admin.tarefas.atualizar', 'uses' => 'Admin\TarefaController@atualizar']);
     Route::get('/admin/tarefas/deletar/{id}', ['as' => 'admin.tarefas.deletar', 'uses' => 'Admin\TarefaController@deletar']);
+
+    Route::get('/admin/etapas', ['as' => 'admin.etapas', 'uses' => 'Admin\EtapaController@index']);
+    Route::get('/admin/etapas/adicionar', ['as' => 'admin.etapas.adicionar', 'uses' => 'Admin\EtapaController@adicionar']);
+    Route::post('/admin/etapas/salvar', ['as' => 'admin.etapas.salvar', 'uses' => 'Admin\EtapaController@salvar']);
+    Route::get('/admin/etapas/editar/{id}', ['as' => 'admin.etapas.editar', 'uses' => 'Admin\EtapaController@editar']);
+    Route::put('/admin/etapas/atualizar/{id}', ['as' => 'admin.etapas.atualizar', 'uses' => 'Admin\EtapaController@atualizar']);
+    Route::get('/admin/etapas/deletar/{id}', ['as' => 'admin.etapas.deletar', 'uses' => 'Admin\EtapaController@deletar']);
 //});

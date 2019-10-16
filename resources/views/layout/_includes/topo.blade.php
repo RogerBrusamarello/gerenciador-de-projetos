@@ -21,8 +21,11 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Login <span class="sr-only">(current)</span></a>
         </li>
+        @if (Auth::guest())
+        <li><a class="nav-link" href="{{ route('admin.projetos') }}">Home</a></li>            
+        @endif
        
        <!-- Rota Login com atenticação pronta -->
         <!--@if (Auth::guest())
