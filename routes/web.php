@@ -39,4 +39,33 @@ Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginContro
     Route::get('/admin/etapas/editar/{id}', ['as' => 'admin.etapas.editar', 'uses' => 'Admin\EtapaController@editar']);
     Route::put('/admin/etapas/atualizar/{id}', ['as' => 'admin.etapas.atualizar', 'uses' => 'Admin\EtapaController@atualizar']);
     Route::get('/admin/etapas/deletar/{id}', ['as' => 'admin.etapas.deletar', 'uses' => 'Admin\EtapaController@deletar']);
-//});
+
+    Route::get('/admin/statusTarefas', ['as' => 'admin.statusTarefas', 'uses' => 'Admin\StatusTarefaController@index']);
+    Route::get('/admin/statusTarefas/adicionar', ['as' => 'admin.statusTarefas.adicionar', 'uses' => 'Admin\StatusTarefaController@adicionar']);
+    Route::post('/admin/statusTarefas/salvar', ['as' => 'admin.statusTarefas.salvar', 'uses' => 'Admin\StatusTarefaController@salvar']);
+    Route::get('/admin/statusTarefas/editar/{id}', ['as' => 'admin.statusTarefas.editar', 'uses' => 'Admin\StatusTarefaController@editar']);
+    Route::put('/admin/statusTarefas/atualizar/{id}', ['as' => 'admin.statusTarefas.atualizar', 'uses' => 'Admin\StatusTarefaController@atualizar']);
+    Route::get('/admin/statusTarefas/deletar/{id}', ['as' => 'admin.statusTarefas.deletar', 'uses' => 'Admin\StatusTarefaController@deletar']);
+
+    Route::get('/admin/tipoTarefas', ['as' => 'admin.tipoTarefas', 'uses' => 'Admin\TipoTarefaController@index']);
+    Route::get('/admin/tipoTarefas/adicionar', ['as' => 'admin.tipoTarefas.adicionar', 'uses' => 'Admin\TipoTarefaController@adicionar']);
+    Route::post('/admin/tipoTarefas/salvar', ['as' => 'admin.tipoTarefas.salvar', 'uses' => 'Admin\TipoTarefaController@salvar']);
+    Route::get('/admin/tipoTarefas/editar/{id}', ['as' => 'admin.tipoTarefas.editar', 'uses' => 'Admin\TipoTarefaController@editar']);
+    Route::put('/admin/tipoTarefas/atualizar/{id}', ['as' => 'admin.tipoTarefas.atualizar', 'uses' => 'Admin\TipoTarefaController@atualizar']);
+    Route::get('/admin/tipoTarefas/deletar/{id}', ['as' => 'admin.tipoTarefas.deletar', 'uses' => 'Admin\TipoTarefaController@deletar']);
+
+    Route::get('/admin/prioridades', ['as' => 'admin.prioridades', 'uses' => 'Admin\PrioridadeController@index']);
+    Route::get('/admin/prioridades/adicionar', ['as' => 'admin.prioridades.adicionar', 'uses' => 'Admin\PrioridadeController@adicionar']);
+    Route::post('/admin/prioridades/salvar', ['as' => 'admin.prioridades.salvar', 'uses' => 'Admin\PrioridadeController@salvar']);
+    Route::get('/admin/prioridades/editar/{id}', ['as' => 'admin.prioridades.editar', 'uses' => 'Admin\PrioridadeController@editar']);
+    Route::put('/admin/prioridades/atualizar/{id}', ['as' => 'admin.prioridades.atualizar', 'uses' => 'Admin\PrioridadeController@atualizar']);
+    Route::get('/admin/prioridades/deletar/{id}', ['as' => 'admin.prioridades.deletar', 'uses' => 'Admin\PrioridadeController@deletar']);
+
+    Route::get('/admin/versao', ['as' => 'admin.versao', 'uses' => 'Admin\VersaoController@index']);
+    Route::get('/admin/versao/adicionar', ['as' => 'admin.versao.adicionar', 'uses' => 'Admin\VersaoController@adicionar']);
+    Route::post('/admin/versao/salvar', ['as' => 'admin.versao.salvar', 'uses' => 'Admin\VersaoController@salvar']);
+    Route::get('/admin/versao/editar/{id}', ['as' => 'admin.versao.editar', 'uses' => 'Admin\VersaoController@editar']);
+    Route::put('/admin/versao/atualizar/{id}', ['as' => 'admin.versao.atualizar', 'uses' => 'Admin\VersaoController@atualizar']);
+    Route::get('/admin/versao/deletar/{id}', ['as' => 'admin.versao.deletar', 'uses' => 'Admin\VersaoController@deletar']);
+    
+    //);

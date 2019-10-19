@@ -16,11 +16,8 @@
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
                 <a href="{{ route('admin.tarefas') }}">
-                <img src="https://www.trzcacak.rs/myfile/detail/487-4878854_ferramentas-em-png-tools-clip-art.png" alt="editar" width="120px">
+                <h5 class="card-title">{{ $registro->descricao }}</h5>
                 </a>
-                <h5 class="card-title">{{ $registro->nomeProjeto }}</h5>
-                <p class="card-text">{{ $registro->solicitante }}</p>
-                <p class="card-text">{{ $registro->previsaoEntrega }}</p>
                 <div class="float-right">
                     <a href="{{ route('admin.etapas.editar',$registro->id) }}">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">

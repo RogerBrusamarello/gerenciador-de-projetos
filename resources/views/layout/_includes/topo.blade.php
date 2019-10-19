@@ -31,7 +31,23 @@
         <!--@if (Auth::guest())
         <li><a href="{{ route('login') }}">Login</a></li>            
         @endif-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menus de Cadastro
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('admin.prioridades') }}">Prioridade</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('admin.etapas') }}">Etapas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('admin.statusTarefas') }}">Status das Tarefas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('admin.tipoTarefas') }}">Tipos de Tarefas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('admin.versao') }}">Versão</a>
 
+          </div>
+        </li>
 
       </ul>
     </div>
