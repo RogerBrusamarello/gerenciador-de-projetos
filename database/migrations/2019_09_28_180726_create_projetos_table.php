@@ -18,7 +18,7 @@ class CreateProjetosTable extends Migration
             $table->string('nomeProjeto');
             $table->string('descricao');
             $table->string('solicitante');
-            $table->timestamp('previsaoEntrega');
+            $table->date('previsaoEntrega');
             $table->decimal('versaoProjeto',5,2);
             $table->timestamps();
 

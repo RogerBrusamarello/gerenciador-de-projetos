@@ -13,12 +13,12 @@
             &nbsp;
             <div class="form-group">
                 <label>Previsao da Entrega</label>
-                <input type="datetime-local" class="form-control" name="previsaoEntrega" value="{{ isset($registro->previsaoEntrega) ? $registro->previsaoEntrega : ''}}">
+                <input type="date" class="form-control" name="previsaoEntrega" value="{{ isset($registro->previsaoEntrega) ? $registro->previsaoEntrega : ''}}">
             </div>
             &nbsp;
             <div class="form-group">
                 <label>Versão do Projeto</label>
-                <input type="text" class="form-control" name="versaoProjeto" value="{{ isset($registro->versaoProjeto) ? $registro->versaoProjeto : ''}}">
+                <input type="text" placeholder="" class="form-control" name="versaoProjeto" value="{{ isset($registro->versaoProjeto) ? $registro->versaoProjeto : ''}}">
             </div>
         </div>
         <div class="form-group">

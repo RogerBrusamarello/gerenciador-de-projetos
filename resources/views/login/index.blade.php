@@ -22,6 +22,10 @@
                           <input type="password" class="form-control" name="senha" id="exampleInputPassword1" placeholder="Senha">
                         </div>
 
+                        <div class="form-group">
+                          <a href="#" data-target="#pwdModal" data-toggle="modal">Esqueceu sua senha?</a>
+                        </div>
+
                         <button class="justify-content-center btn btn-success" type="submit">Entrar</button>
                         <a class="justify-content-center btn btn-success" href=" {{ route('site.login.cadastro') }}">Cadastro</a> 
                     </form>

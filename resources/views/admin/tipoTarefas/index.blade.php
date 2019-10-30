@@ -19,12 +19,12 @@
                 <h5 class="card-title">{{ $registro->descricao }}</h5>
                 </a>
                 <div class="float-right">
-                    <a href="{{ route('admin.tiposTarefas.editar',$registro->id) }}">
+                    <a href="{{ route('admin.tipoTarefas.editar',$registro->id) }}">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
                     </a>
                     &nbsp;
                     
-                    <a  href="{{ route('admin.tiposTarefas.deletar',$registro->id) }}">
+                    <a  href="{{ route('admin.tipoTarefas.deletar',$registro->id) }}">
                         <img src="https://image.flaticon.com/icons/png/512/70/70388.png" alt="apagar" width="20px"><br>
                     </a>
                 </div>
