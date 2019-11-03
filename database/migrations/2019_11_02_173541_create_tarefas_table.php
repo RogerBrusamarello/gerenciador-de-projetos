@@ -15,13 +15,13 @@ class CreateTarefasTable extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('statusTarefa_id')->unsigned();
+            $table->foreign('statusTarefa_id')->references('id')->on('status_tarefas');
+            $table->integer('prioridade_id')->unsigned();
+            $table->foreign('prioridade_id')->references('id')->on('prioridades');
             $table->string('nomeTarefa');
             $table->string('descricao');
-            $table->decimal('statusTarefa_id',5,2);
-            $table->decimal('prioridade_id',5,2);
-            $table->decimal('etapa_id',5,2);
             $table->timestamps();
-
         });
     }
 

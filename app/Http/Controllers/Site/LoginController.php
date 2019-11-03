@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -15,8 +17,13 @@ class LoginController extends Controller
         return view('login.cadastrar');
     }
 
-    public function cadastrar(){
+    public function cadastrar(Request $req){
+        $dados = $req->all();
         
+        User::create($dados);
+
+
+        return redirect()->route('site.login');
     }
 
     public function entrar(Request $req){

@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', ['as' => 'login', 'uses' => 'Site\LoginController@index']);
-Route::get('/cadastrar', ['as' => 'site.login.cadastrar', 'uses' => 'Site\LoginController@cadastrar']);
+Route::get('/', ['as' => 'site.login', 'uses' => 'Site\LoginController@index']);
+Route::post('/cadastrar', ['as' => 'site.login.cadastrar', 'uses' => 'Site\LoginController@cadastrar']);
 Route::get('/cadastro', ['as' => 'site.login.cadastro', 'uses' => 'Site\LoginController@cadastro']);
 Route::get('/sair', ['as' => 'site.login.sair', 'uses' => 'Site\LoginController@sair']);
 Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginController@entrar']);
 
 
-//Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/projetos', ['as' => 'admin.projetos', 'uses' => 'Admin\ProjetoController@index']);
     Route::get('/admin/projetos/adicionar', ['as' => 'admin.projetos.adicionar', 'uses' => 'Admin\ProjetoController@adicionar']);
     Route::post('/admin/projetos/salvar', ['as' => 'admin.projetos.salvar', 'uses' => 'Admin\ProjetoController@salvar']);
@@ -68,4 +68,4 @@ Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginContro
     Route::put('/admin/versao/atualizar/{id}', ['as' => 'admin.versao.atualizar', 'uses' => 'Admin\VersaoController@atualizar']);
     Route::get('/admin/versao/deletar/{id}', ['as' => 'admin.versao.deletar', 'uses' => 'Admin\VersaoController@deletar']);
     
-    //);
+});

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h3 class="d-flex justify-content-center">Cadastro</h3>
                     <div class="row justify-content-center form-group">
-                        <form action="{{ route('site.login.cadastro') }}" method="POST">
+                        <form action="{{ route('site.login.cadastrar') }}" method="POST">
                             {{ csrf_field() }}
 
 
@@ -19,7 +19,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="password" name="senha" class="form-control" placeholder="Informe sua senha">
+                                <input type="password" name="password" class="form-control" placeholder="Informe sua senha">
                             </div>
 
                             <div class="form-group">
