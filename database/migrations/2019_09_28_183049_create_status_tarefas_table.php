@@ -14,7 +14,7 @@ class CreateStatusTarefasTable extends Migration
     public function up()
     {
         Schema::create('status_tarefas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integerIncrements('id');
             $table->string('descricao');
             $table->timestamps();
 

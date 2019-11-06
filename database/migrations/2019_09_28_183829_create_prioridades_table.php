@@ -14,7 +14,7 @@ class CreatePrioridadesTable extends Migration
     public function up()
     {
         Schema::create('prioridades', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integerIncrements('id');
             $table->string('descricao');
             $table->timestamps();
         });

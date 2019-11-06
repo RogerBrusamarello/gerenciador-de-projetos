@@ -14,7 +14,7 @@ class CreateTarefasTable extends Migration
     public function up()
     {
         Schema::create('tarefas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integerIncrements('id');
             $table->integer('statusTarefa_id')->unsigned();
             $table->foreign('statusTarefa_id')->references('id')->on('status_tarefas');
             $table->integer('prioridade_id')->unsigned();
