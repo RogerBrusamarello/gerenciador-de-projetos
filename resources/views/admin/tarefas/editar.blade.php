@@ -4,7 +4,7 @@
 
 @section('conteudo')
 <div class="container">
-    <h3 class="d-flex justify-content-center">Editando Status da Tarefa</h3>
+    <h3 class="d-flex justify-content-center">Editando Tarefas</h3>
     <div class="align-center">
         <form action="{{ route('admin.statusTarefas.atualizar',$registro->id) }}" method="POST">
             {{ csrf_field() }}
