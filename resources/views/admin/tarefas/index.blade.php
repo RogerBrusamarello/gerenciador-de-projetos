@@ -8,7 +8,7 @@
     <h3 class="d-flex justify-content-center">Tarefas</h3>
     
     <p class="align-items-center">
-        <a class="btn btn-info" href="{{ route('admin.statusTarefas.adicionar') }}">Adicionar Tarefas</a>
+        <a class="btn btn-info" href="{{ route('admin.tarefas.adicionar') }}">Adicionar Tarefas</a>
     </p>
 
     <div class="row mx-md-n5">
@@ -20,11 +20,11 @@
                 </a>
                 <h5 class="card-title">{{ $registro->descricao }}</h5>
                 <div class="float-right">
-                    <a href="{{ route('admin.statusTarefas.editar',$registro->id) }}">
+                    <a href="{{ route('admin.tarefas.editar',$registro->id) }}">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
                     </a>
                     &nbsp;
-                    <a  href="{{ route('admin.statusTarefas.deletar',$registro->id) }}">
+                    <a  href="{{ route('admin.tarefas.deletar',$registro->id) }}">
                         <img src="https://image.flaticon.com/icons/png/512/70/70388.png" alt="apagar" width="20px"><br>
                     </a>
                 </div>
