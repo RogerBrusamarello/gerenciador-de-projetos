@@ -12,14 +12,9 @@ class TarefaController extends Controller
 {
     public function index(){
 
-        $tarefa = Tarefa::all();
-        $etapa= Etapa::all();
-        $prioridade = Prioridade::all();
-
-        $registros['tarefa'] = $tarefa;
-        $registros['etapa'] = $etapa;
-        $registros['prioridade'] = $prioridade;
-
+        $registros = Etapa::getTarefas();
+        $registros = Tarefa::getPrioridades();
+        $registros = Tarefa::getStatusTarefa();
 
         return view('admin.tarefas.index',compact('registros'));
 

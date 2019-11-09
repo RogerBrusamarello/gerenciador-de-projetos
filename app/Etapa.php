@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Etapa extends Model
 {
@@ -10,7 +11,8 @@ class Etapa extends Model
         'id','descricao'
     ];
 
-    public function tarefas(){
-        return $this->hasMany(Tarefa::class);
+    public static function getTarefas(){
+        return DB::select('select * from etapas e inner join tarefas t on e.id = t.etapa_id');
     }
+    
 }

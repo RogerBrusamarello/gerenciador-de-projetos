@@ -19,6 +19,8 @@ class CreateTarefasTable extends Migration
             $table->foreign('statusTarefa_id')->references('id')->on('status_tarefas');
             $table->integer('prioridade_id')->unsigned();
             $table->foreign('prioridade_id')->references('id')->on('prioridades');
+            $table->integer('etapa_id')->unsigned();
+            $table->foreign('etapa_id')->references('id')->on('etapas');
             $table->string('nomeTarefa');
             $table->string('descricao');
             $table->timestamps();
