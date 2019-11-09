@@ -353,7 +353,8 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Fideloper\\Proxy\\TrustedProxyServiceProvider"
+                        "Fideloper\\Proxy\\TrustedProxyServiceProvider",
+                        "Collective\\Html\\HtmlServiceProvider"
                     ]
                 }
             },

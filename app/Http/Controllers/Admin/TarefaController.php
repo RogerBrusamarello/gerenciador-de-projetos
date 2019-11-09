@@ -5,13 +5,24 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tarefa;
+use App\Etapa;
+use App\Prioridade;
 
 class TarefaController extends Controller
 {
     public function index(){
 
-        $registros = Tarefa::all();
+        $tarefa = Tarefa::all();
+        $etapa= Etapa::all();
+        $prioridade = Prioridade::all();
+
+        $registros['tarefa'] = $tarefa;
+        $registros['etapa'] = $etapa;
+        $registros['prioridade'] = $prioridade;
+
+
         return view('admin.tarefas.index',compact('registros'));
+
     }
 
     public function adicionar(){

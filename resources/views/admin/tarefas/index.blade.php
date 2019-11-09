@@ -15,9 +15,20 @@
     @foreach ($registros as $registro)
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
-                <a href="{{ route('admin.tarefas') }}">
-                <img src="https://cdn3.iconfinder.com/data/icons/ico-nic-lists/128/List_Task_list_Tasks_Multiselect_Select_Multiple_Checklist_Check_Checkmark_Checked_Checkbox_Properties_Property_Options_Preferences_Choose_Choice_Select_Selected_Mark_Marked_Todo_To_Do_To-do-512.png" alt="editar" width="120px">
-                </a>
+                {{-- Colocar AS ETAPAS DE TITULO --}}
+
+                <div class="card text-white mb-3" style="max-width: 18rem;">
+                    {{-- <div class="card-header">{{ $registro->tarefa->descricao }}</div> --}}
+                    <div class="card-body">
+                      {{-- <h5 class="card-title">{{ $tarefa->nomeTarefa }}</h5> --}}
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+
+                {!! Form::select('prioridades', ['value' => 'descricao']) !!}
+                {{-- Colocar um box para poder inserir o nome da tarefa --}}
+                {{-- Colocar um box para poder inserir a descricao da tarefa --}}
+                {{-- Select para colocar a prioridade no box --}}
                 <h5 class="card-title">{{ $registro->descricao }}</h5>
                 <div class="float-right">
                     <a href="{{ route('admin.tarefas.editar',$registro->id) }}">

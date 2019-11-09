@@ -9,4 +9,8 @@ class Etapa extends Model
     protected $fillable = [
         'id','descricao'
     ];
+
+    public function tarefas(){
+        return $this->hasMany(Tarefa::class);
+    }
 }
