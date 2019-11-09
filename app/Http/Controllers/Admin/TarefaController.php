@@ -11,10 +11,11 @@ use App\Prioridade;
 class TarefaController extends Controller
 {
     public function index(){
-
-        $registros = Etapa::getTarefas();
+        
         $registros = Tarefa::getPrioridades();
         $registros = Tarefa::getStatusTarefa();
+        $registros = Etapa::getTarefas();
+               
 
         return view('admin.tarefas.index',compact('registros'));
 

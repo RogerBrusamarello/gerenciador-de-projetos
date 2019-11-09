@@ -1,6 +1,6 @@
 @extends('layout.site')
 
-@section('titulo','Status das Tarefas')
+@section('titulo','Tarefas')
 
 @section('conteudo')
 
@@ -15,21 +15,17 @@
     @foreach ($registros as $registro)
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
-                {{-- Colocar AS ETAPAS DE TITULO --}}
+                <div class="card bg-light  mb-3" style="max-width: 18rem;">
+                    {{-- Colocar AS ETAPAS DE TITULO --}}
+                    <div class="card-header">{{ $registro->etapa_id }}</div>
 
-                <div class="card text-white mb-3" style="max-width: 18rem;">
-                    {{-- <div class="card-header">{{ $registro->tarefa->descricao }}</div> --}}
                     <div class="card-body">
-                      {{-- <h5 class="card-title">{{ $tarefa->nomeTarefa }}</h5> --}}
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">{{ $registro->nomeTarefa }}</h5>
                     </div>
                   </div>
-
-                {!! Form::select('prioridades', ['value' => 'descricao']) !!}
                 {{-- Colocar um box para poder inserir o nome da tarefa --}}
                 {{-- Colocar um box para poder inserir a descricao da tarefa --}}
                 {{-- Select para colocar a prioridade no box --}}
-                <h5 class="card-title">{{ $registro->descricao }}</h5>
                 <div class="float-right">
                     <a href="{{ route('admin.tarefas.editar',$registro->id) }}">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
