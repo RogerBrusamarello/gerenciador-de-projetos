@@ -6,7 +6,7 @@
 
 <div class="container">
     <h3 class="d-flex justify-content-center">Tarefas</h3>
-    
+
     <p class="align-items-center">
         <a class="btn btn-info" href="{{ route('admin.tarefas.adicionar') }}">Adicionar Tarefas</a>
     </p>
@@ -17,7 +17,16 @@
             <div class="card-body justify-content-center" style="width: 15rem;">
                 <div class="card bg-light  mb-3" style="max-width: 18rem;">
                     {{-- Colocar AS ETAPAS DE TITULO --}}
-                    <div class="card-header">{{ $registro->etapa_id }}</div>
+                    <div class="card-header">{{ $registro-> }}</div>
+
+                    <div class="form-group">
+                        {!! Form::label("prioridade_id", "Prioridade:") !!}
+                        {{  Form::select('prioridade_id',
+                            \App\Habito::orderBy('descricao')->pluck('descricao', 'id')->toArray(),
+                            null, ['class' => 'form-control']) }}
+                    </div>
+
+
 
                     <div class="card-body">
                       <h5 class="card-title">{{ $registro->nomeTarefa }}</h5>
@@ -28,7 +37,7 @@
                 {{-- Select para colocar a prioridade no box --}}
                 <div class="float-right">
                     <a href="{{ route('admin.tarefas.editar',$registro->id) }}">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
+                     {{--  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">--}}
                     </a>
                     &nbsp;
                     <a  href="{{ route('admin.tarefas.deletar',$registro->id) }}">
@@ -43,6 +52,6 @@
     @endforeach
 </div>
 <br>
-  
+
 </div>
 @endsection

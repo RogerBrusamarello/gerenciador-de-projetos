@@ -4,6 +4,7 @@
         <div class="form-group">
             <label>Descrição da etapa</label>
             <textarea type="text" class="form-control" name="descricao">{{ isset($registro->descricao) ? $registro->descricao : ''}}</textarea>
+            <textarea type="text" class="form-control" name="descricao">{{ $etapas->projeto->id }}</textarea>
         </div>
     </div>
 </div>

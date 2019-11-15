@@ -16,11 +16,11 @@ class UsuarioSeeder extends Seeder
             'nome'=>"Gilberto",
             'email'=>"admin@admin.com.br",
             'password'=> bcrypt("123456"),
-            'cpf'=> '01605082074',
-            'endereco'=>'Miguel Soccol 33 - Casa'
+            'cpf'=> '00879526025',
+            'endereco'=>'Via Napoli 245'
         ];
         if (User::where('email','=',$dados['email'])->count()){
-            $usuario = User::where('email','=',$dados['email'])-> first();
+            $usuario = User::where('email','=',$dados['email'])->first();
             $usuario->update($dados);
             echo "Usuário atualizado";
         }else{

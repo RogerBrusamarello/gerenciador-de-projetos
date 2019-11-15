@@ -9,4 +9,8 @@ class Projeto extends Model
     protected $fillable = [
         'id', 'nomeProjeto', 'descricao', 'solicitante', 'previsaoEntrega', 'versaoProjeto'
     ];
+
+    public static function etapas() {
+        return $this->hasMany('App\Etapas');
+    }
 }

@@ -24,17 +24,15 @@
         @if (Auth::guest())
           <li class="nav-item">
             <a class="nav-link" href="/">Login <span class="sr-only">(current)</span></a>
-          </li>  
-        @else     
-        <li><a class="nav-link" href="{{ route('admin.projetos') }}">Home</a></li>                       
+          </li>
+        @else
+        <li><a class="nav-link" href="{{ route('admin.projetos') }}">Home</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Menus de Cadastro
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('admin.prioridades') }}">Prioridade</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('admin.etapas') }}">Etapas</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('admin.statusTarefas') }}">Status das Tarefas</a>
             <div class="dropdown-divider"></div>
