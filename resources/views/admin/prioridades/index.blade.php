@@ -15,7 +15,6 @@
     @foreach ($registros as $registro)
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
-                <a href="{{ route('admin.tarefas') }}">
                 <h5 class="card-title">{{ $registro->descricao }}</h5>
                 </a>
                 <div class="float-right">

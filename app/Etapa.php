@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Etapa extends Model
 {
     protected $fillable = [
-        'id','descricao'
+        'id','descricao', 'projeto_id'
     ];
 
     public static function tarefas() {

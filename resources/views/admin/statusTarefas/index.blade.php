@@ -15,9 +15,6 @@
     @foreach ($registros as $registro)
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
-                <a href="{{ route('admin.tarefas') }}">
-                {{--<img src="https://cdn3.iconfinder.com/data/icons/ico-nic-lists/128/List_Task_list_Tasks_Multiselect_Select_Multiple_Checklist_Check_Checkmark_Checked_Checkbox_Properties_Property_Options_Preferences_Choose_Choice_Select_Selected_Mark_Marked_Todo_To_Do_To-do-512.png" alt="editar" width="120px">--}}
-                </a>
                 <h5 class="card-title">{{ $registro->descricao }}</h5>
                 <div class="float-right">
                     <a href="{{ route('admin.statusTarefas.editar',$registro->id) }}">

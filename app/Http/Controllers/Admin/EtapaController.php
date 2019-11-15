@@ -10,7 +10,7 @@ class EtapaController extends Controller
 {
     public function index(){
 
-        $registros = Etapa::all();
+        $registros = Etapa::Where('projeto_id',1)->get();
         return view('admin.etapas.index',compact('registros'));
     }
 

@@ -15,9 +15,9 @@ class CreateEtapasTable extends Migration
     {
         Schema::create('etapas', function (Blueprint $table) {
             $table->integerIncrements('id');
-            $table->unsignedInteger('projeto_id');
-            $table->foreign('projeto_id')->references('id')->on('projetos');
             $table->string('descricao');
+            $table->Integer('projeto_id')->unsigned();
+            $table->foreign('projeto_id')->references('id')->on('projetos');
             $table->timestamps();
 
         });
