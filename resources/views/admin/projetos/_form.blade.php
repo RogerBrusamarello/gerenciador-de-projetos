@@ -17,9 +17,11 @@
             </div>
             &nbsp;
             <div class="form-group">
-                <label>Versão do Projeto</label>
-                <input type="text" placeholder="" class="form-control" name="versaoProjeto" value="{{ isset($registro->versaoProjeto) ? $registro->versaoProjeto : ''}}">
-            </div>
+            {!! Form::label("versao", "Versão") !!}
+                {{  Form::select('versaoProjeto',
+                    \App\Versao::orderBy('descricao')->pluck('descricao', 'id')->toArray(),
+                    null, ['class' => 'form-control']) }}
+            </div>    
         </div>
         <div class="form-group">
             <label>Descrição do Projeto</label>

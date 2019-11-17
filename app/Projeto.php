@@ -13,4 +13,8 @@ class Projeto extends Model
     public static function etapas() {
         return $this->hasMany('App\Etapas');
     }
+
+    public static function versao() {
+        return $this->hasOne('App\Versao');
+    }
 }
