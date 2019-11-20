@@ -25,8 +25,10 @@
                   </div>
                 <div class="float-right">
                     <a href="{{ route('admin.tarefas.editar',$registro->id) }}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
                     </a>
                     &nbsp;
+                    
                     <a  href="{{ route('admin.tarefas.deletar',$registro->id) }}">
                         <img src="https://image.flaticon.com/icons/png/512/70/70388.png" alt="apagar" width="20px"><br>
                     </a>

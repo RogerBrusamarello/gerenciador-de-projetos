@@ -35,8 +35,8 @@
             <a class="dropdown-item" href="{{ route('admin.prioridades') }}">Prioridade</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('admin.statusTarefas') }}">Status das Tarefas</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('admin.tipoTarefas') }}">Tipos de Tarefas</a>
+            {{-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('admin.tipoTarefas') }}">Tipos de Tarefas</a> --}}
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('admin.versao') }}">Versão</a>
           </div>
