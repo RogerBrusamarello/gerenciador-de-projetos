@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Projeto;
+use Illuminate\Support\Facades\App;
 
 class ProjetoController extends Controller
 {
@@ -12,6 +13,19 @@ class ProjetoController extends Controller
 
         $registros = Projeto::all();
         return view('admin.projetos.index',compact('registros'));
+    }
+
+    public function ver($id){
+
+        $projeto = Projeto::find($id);
+        return view('admin.projetos.ver',compact('projeto'));
+    }
+
+    public function relatorio($id){
+        $pdf = App::make('dompdf.wrapper');
+        $projeto = Projeto::find($id);
+        $pdf->loadView('admin.projetos.relatorio',compact('projeto'));
+        return $pdf->stream();
     }
 
     public function adicionar(){
@@ -39,7 +53,7 @@ class ProjetoController extends Controller
 
     public function deletar($id){
         Projeto::find($id)->delete();
-        
+
         return redirect()->route('admin.projetos');
     }
 }

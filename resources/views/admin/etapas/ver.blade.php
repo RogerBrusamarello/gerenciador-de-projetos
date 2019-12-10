@@ -5,14 +5,19 @@
 @section('conteudo')
 
 <div class="container">
-    <h3 class="d-flex justify-content-center">Tarefas</h3>
+    <h3 class="d-flex justify-content-center">
+        <a href="{{route('admin.projetos')}}">Projetos</a> >
+        <a href="{{route('admin.projetos.ver', $etapa->projeto->id)}}">{{$etapa->projeto->nomeProjeto}}</a> >
+        <a href="{{route('admin.etapas.ver', $etapa->id)}}">{{$etapa->descricao}}</a>>
+        Tarefas
+    </h3>
 
     <p class="align-items-center">
-        <a class="btn btn-info" href="{{ route('admin.tarefas.adicionar') }}">Adicionar Tarefas</a>
+        <a class="btn btn-success" href="{{ route('admin.tarefas.adicionar', $etapa->id) }}">Adicionar Tarefas</a>
     </p>
 
     <div class="row mx-md-n5">
-    @foreach ($registros as $registro)
+    @foreach ($etapa->tarefas as $registro)
         <div class="card">
             <div class="card-body justify-content-center" style="width: 15rem;">
                 <div class="card bg-light  mb-3" style="max-width: 18rem;">
@@ -21,9 +26,8 @@
 
                     <div class="card-body">
                       <h5 class="card-title">{{ $registro->nomeTarefa }}</h5>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $registro->descricao }}</h5>
+                        <p>{{ $registro->descricao }}</p>
+                        <span class="badge badge-pill badge-primary">{{ $registro->status->descricao }}</span>
                     </div>
                 </div>
                 <div class="float-right">

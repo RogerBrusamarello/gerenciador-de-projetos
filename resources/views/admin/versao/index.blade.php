@@ -6,9 +6,9 @@
 
 <div class="container">
     <h3 class="d-flex justify-content-center">Versão</h3>
-    
+
     <p class="align-items-center">
-        <a class="btn btn-info" href="{{ route('admin.versao.adicionar') }}">Adicionar Versão</a>
+        <a class="btn btn-success" href="{{ route('admin.versao.adicionar') }}">Adicionar Versão</a>
     </p>
 
     <div class="row mx-md-n5">
@@ -23,7 +23,7 @@
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZC8sDxWkT0-hG7ZTUTWOaAtAsAfrdxkOHuo43sagxdXEsMauQOQ&s" alt="editar" width="20px">
                     </a>
                     &nbsp;
-                    
+
                     <a  href="{{ route('admin.versao.deletar',$registro->id) }}">
                         <img src="https://image.flaticon.com/icons/png/512/70/70388.png" alt="apagar" width="20px"><br>
                     </a>
@@ -33,9 +33,9 @@
         &nbsp;
         &nbsp;
         &nbsp;
-    @endforeach 
+    @endforeach
 </div>
 <br>
-  
+
 </div>
 @endsection

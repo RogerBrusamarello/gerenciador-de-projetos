@@ -12,7 +12,7 @@
             </div>
             &nbsp;
             <div class="form-group">
-                <label>Previsao da Entrega</label>
+                <label>Previsão da Entrega</label>
                 <input type="date" class="form-control" name="previsaoEntrega" value="{{ isset($registro->previsaoEntrega) ? $registro->previsaoEntrega : ''}}">
             </div>
             &nbsp;
@@ -21,7 +21,7 @@
                 {{  Form::select('versaoProjeto',
                     \App\Versao::orderBy('descricao')->pluck('descricao', 'id')->toArray(),
                     null, ['class' => 'form-control']) }}
-            </div>    
+            </div>
         </div>
         <div class="form-group">
             <label>Descrição do Projeto</label>

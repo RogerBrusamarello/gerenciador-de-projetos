@@ -10,7 +10,7 @@ class StatusTarefa extends Model
         'id','descricao'
     ];
 
-    public static function tarefa()
+    public function tarefa()
     {
         return $this->belongsTo('App\Tarefa');
     }

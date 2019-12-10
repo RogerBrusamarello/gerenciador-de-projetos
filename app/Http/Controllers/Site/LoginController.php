@@ -6,10 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\Auth as IlluminateAuth;
 
 class LoginController extends Controller
 {
     public function index(){
+
+        if(Auth::user()) {
+            return redirect()->route('admin.projetos');
+        }
         return view('login.index');
     }
 
@@ -19,7 +24,7 @@ class LoginController extends Controller
 
     public function cadastrar(Request $req){
         $dados = $req->all();
-        
+
         User::create($dados);
 
 

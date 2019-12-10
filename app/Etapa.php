@@ -10,11 +10,11 @@ class Etapa extends Model
         'id','descricao', 'projeto_id'
     ];
 
-    public static function tarefas() {
+    public function tarefas() {
         return $this->hasMany(\App\Tarefa::class);
     }
-    
-    public static function projeto() {
+
+    public function projeto() {
         return $this->belongsTo('App\Projeto');
     }
 }

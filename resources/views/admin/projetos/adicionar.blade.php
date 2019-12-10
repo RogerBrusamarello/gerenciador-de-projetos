@@ -13,6 +13,6 @@
             <button class="btn btn-success">Salvar</button>
         </form>
     </div>
-<br> 
+<br>
 </div>
 @endsection

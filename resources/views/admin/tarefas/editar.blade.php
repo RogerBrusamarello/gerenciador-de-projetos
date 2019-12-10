@@ -4,7 +4,12 @@
 
 @section('conteudo')
 <div class="container">
-    <h3 class="d-flex justify-content-center">Editando Tarefas</h3>
+    <h3 class="d-flex justify-content-center">
+        <a href="{{route('admin.projetos')}}">Projetos</a> >
+        <a href="{{route('admin.projetos.ver', $registro->etapa->projeto->id)}}">{{$registro->etapa->projeto->nomeProjeto}}</a> >
+        <a href="{{route('admin.etapas.ver', $registro->etapa->id)}}">{{$registro->etapa->descricao}}</a>>
+        Editar tarefa
+    </h3>
     <div class="align-center">
         <form action="{{ route('admin.tarefas.atualizar',$registro->id) }}" method="POST">
             {{ csrf_field() }}
@@ -14,6 +19,6 @@
             <button class="btn btn-success">Atualizar</button>
         </form>
     </div>
-<br> 
+<br>
 </div>
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Etapa;
+use App\Projeto;
 
 class EtapaController extends Controller
 {
@@ -14,32 +15,40 @@ class EtapaController extends Controller
         return view('admin.etapas.index',compact('registros'));
     }
 
-    public function adicionar(){
-        return view('admin.etapas.adicionar');
+    public function ver($id){
+        $etapa = Etapa::find($id);
+        return view('admin.etapas.ver',compact('etapa'));
+    }
+
+    public function adicionar($projeto){
+        $projeto = Projeto::find($projeto);
+        return view('admin.etapas.adicionar', compact('projeto'));
     }
 
     public function salvar(Request $req){
         $dados = $req->all();
         Etapa::create($dados);
-
-        return redirect()->route('admin.etapas');
+        return redirect()->route('admin.projetos.ver', $req->projeto_id);
     }
 
     public function editar($id){
-        $registro = Etapa::find($id);
-        return view('admin.etapas.editar',compact('registro'));
+        $etapa = Etapa::find($id);
+        $projeto = $etapa->projeto;
+        return view('admin.etapas.editar',compact('etapa', 'projeto'));
     }
 
     public function atualizar(Request $req, $id){
         $dados = $req->all();
-        Etapa::find($id)->update($dados);
-
-        return redirect()->route('admin.etapas');
+        $etapa = Etapa::find($id);
+        $etapa->update($dados);
+        return redirect()->route('admin.projetos.ver', $etapa->projeto_id);
     }
 
     public function deletar($id){
-        Etapa::find($id)->delete();
-        
-        return redirect()->route('admin.etapas');
+        $etapa = Etapa::find($id);
+        $projeto = $etapa->projeto;
+        $etapa->delete();
+
+        return redirect()->route('admin.projetos.ver', $projeto->id);
     }
 }

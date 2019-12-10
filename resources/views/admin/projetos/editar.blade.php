@@ -14,6 +14,6 @@
             <button class="btn btn-success">Atualizar</button>
         </form>
     </div>
-<br> 
+<br>
 </div>
 @endsection

@@ -8,7 +8,7 @@
     <h3 class="d-flex justify-content-center">Status das Tarefas</h3>
 
     <p class="align-items-center">
-        <a class="btn btn-info" href="{{ route('admin.statusTarefas.adicionar') }}">Adicionar Status Tarefas</a>
+        <a class="btn btn-success" href="{{ route('admin.statusTarefas.adicionar') }}">Adicionar Status Tarefas</a>
     </p>
 
     <div class="row mx-md-n5">

@@ -13,7 +13,8 @@
 
 <body>
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {{-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary"> --}}
+    <nav class="navbar navbar-dark" style="background-color: #5b605c;">
     <a class="navbar-brand" href="#">Gerenciador de Projetos</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,7 +24,7 @@
         <!-- Rota Login com atenticação pronta -->
         @if (Auth::guest())
           <li class="nav-item">
-            <a class="nav-link" href="/">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/"><h5>Login</h5> <span class="sr-only">(current)</span></a>
           </li>
         @else
         <li><a class="nav-link" href="{{ route('admin.projetos') }}">Home</a></li>

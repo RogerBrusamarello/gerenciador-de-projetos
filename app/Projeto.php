@@ -10,11 +10,11 @@ class Projeto extends Model
         'id', 'nomeProjeto', 'descricao', 'solicitante', 'previsaoEntrega', 'versaoProjeto'
     ];
 
-    public static function etapas() {
-        return $this->hasMany('App\Etapas');
+    public function etapas() {
+        return $this->hasMany('App\Etapa', 'projeto_id', 'id');
     }
 
-    public static function versao() {
+    public function versao() {
         return $this->hasOne('App\Versao');
     }
 }

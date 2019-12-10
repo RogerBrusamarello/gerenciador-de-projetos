@@ -11,6 +11,8 @@
 |
 */
 
+use App\Projeto;
+
 Route::get('/', ['as' => 'site.login', 'uses' => 'Site\LoginController@index']);
 Route::post('/cadastrar', ['as' => 'site.login.cadastrar', 'uses' => 'Site\LoginController@cadastrar']);
 Route::get('/cadastro', ['as' => 'site.login.cadastro', 'uses' => 'Site\LoginController@cadastro']);
@@ -18,24 +20,28 @@ Route::get('/sair', ['as' => 'site.login.sair', 'uses' => 'Site\LoginController@
 Route::post('/entrar', ['as' => 'site.login.entrar', 'uses' => 'Site\LoginController@entrar']);
 
 
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/projetos', ['as' => 'admin.projetos', 'uses' => 'Admin\ProjetoController@index']);
     Route::get('/admin/projetos/adicionar', ['as' => 'admin.projetos.adicionar', 'uses' => 'Admin\ProjetoController@adicionar']);
     Route::post('/admin/projetos/salvar', ['as' => 'admin.projetos.salvar', 'uses' => 'Admin\ProjetoController@salvar']);
+    Route::get('/admin/projetos/ver/{id}', ['as' => 'admin.projetos.ver', 'uses' => 'Admin\ProjetoController@ver']);
+    Route::get('/admin/projetos/relatorio/{id}', ['as' => 'admin.projetos.relatorio', 'uses' => 'Admin\ProjetoController@relatorio']);
     Route::get('/admin/projetos/editar/{id}', ['as' => 'admin.projetos.editar', 'uses' => 'Admin\ProjetoController@editar']);
     Route::put('/admin/projetos/atualizar/{id}', ['as' => 'admin.projetos.atualizar', 'uses' => 'Admin\ProjetoController@atualizar']);
-    Route::get('/admin/projetos/deletar/{id}', ['as' => 'admin.projetos.deletar', 'uses' => 'Admin\ProjetoController@deletar']);   
-    
+    Route::get('/admin/projetos/deletar/{id}', ['as' => 'admin.projetos.deletar', 'uses' => 'Admin\ProjetoController@deletar']);
+
     Route::get('/admin/tarefas', ['as' => 'admin.tarefas', 'uses' => 'Admin\TarefaController@index']);
-    Route::get('/admin/tarefas/adicionar', ['as' => 'admin.tarefas.adicionar', 'uses' => 'Admin\TarefaController@adicionar']);
+    Route::get('/admin/tarefas/adicionar/{id}', ['as' => 'admin.tarefas.adicionar', 'uses' => 'Admin\TarefaController@adicionar']);
     Route::post('/admin/tarefas/salvar', ['as' => 'admin.tarefas.salvar', 'uses' => 'Admin\TarefaController@salvar']);
     Route::get('/admin/tarefas/editar/{id}', ['as' => 'admin.tarefas.editar', 'uses' => 'Admin\TarefaController@editar']);
     Route::put('/admin/tarefas/atualizar/{id}', ['as' => 'admin.tarefas.atualizar', 'uses' => 'Admin\TarefaController@atualizar']);
     Route::get('/admin/tarefas/deletar/{id}', ['as' => 'admin.tarefas.deletar', 'uses' => 'Admin\TarefaController@deletar']);
 
     Route::get('/admin/etapas', ['as' => 'admin.etapas', 'uses' => 'Admin\EtapaController@index']);
-    Route::get('/admin/etapas/adicionar', ['as' => 'admin.etapas.adicionar', 'uses' => 'Admin\EtapaController@adicionar']);
+    Route::get('/admin/etapas/adicionar/{id}', ['as' => 'admin.etapas.adicionar', 'uses' => 'Admin\EtapaController@adicionar']);
     Route::post('/admin/etapas/salvar', ['as' => 'admin.etapas.salvar', 'uses' => 'Admin\EtapaController@salvar']);
+    Route::get('/admin/etapas/ver/{id}', ['as' => 'admin.etapas.ver', 'uses' => 'Admin\EtapaController@ver']);
     Route::get('/admin/etapas/editar/{id}', ['as' => 'admin.etapas.editar', 'uses' => 'Admin\EtapaController@editar']);
     Route::put('/admin/etapas/atualizar/{id}', ['as' => 'admin.etapas.atualizar', 'uses' => 'Admin\EtapaController@atualizar']);
     Route::get('/admin/etapas/deletar/{id}', ['as' => 'admin.etapas.deletar', 'uses' => 'Admin\EtapaController@deletar']);
@@ -67,5 +73,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/versao/editar/{id}', ['as' => 'admin.versao.editar', 'uses' => 'Admin\VersaoController@editar']);
     Route::put('/admin/versao/atualizar/{id}', ['as' => 'admin.versao.atualizar', 'uses' => 'Admin\VersaoController@atualizar']);
     Route::get('/admin/versao/deletar/{id}', ['as' => 'admin.versao.deletar', 'uses' => 'Admin\VersaoController@deletar']);
-    
+
 });
